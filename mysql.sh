@@ -32,8 +32,8 @@ then
     echo "pyhton is not installed. going to install it"
     dnf install python3 -y
     if [ $? -ne 0 ]
+    then
         echo "installing python3 is SUCCESS"
-    
     else
         echo "installing python3 is FAILURE"
         exit 1
