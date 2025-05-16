@@ -33,6 +33,7 @@ then
     dnf install python3 -y
     if [ $? -ne 0 ]
         echo "installing python3 is SUCCESS"
+    
     else
         echo "installing python3 is FAILURE"
         exit 1
