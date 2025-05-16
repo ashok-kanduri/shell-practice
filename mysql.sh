@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=id -u
+USERID=(id -u)
 
 if [ $USERID -ne 0 ]
 then
@@ -10,11 +10,18 @@ else
     echo "you are running with root access"
 fi
 
-dnf install mysql -y
-if [ $? -eq 0 ]
+dnf list installed mysql
+if [ $? -ne 0 ]
 then 
-    echo "installing mysql is SUCCESS...."
+    echo "mysql is not installed. going to install it"
+    dnf install mysql -y
+    if [ $? -eq 0]
+    then 
+        echo "installing mysql is SUCCESS"
+    else 
+        echo "installing mysql is FAILURE"
+        exit 1
+    fi        
 else
-echo "installing mysql is FAILURE...."
-exit 1
+    echo "mysql is already installed..."
 fi
