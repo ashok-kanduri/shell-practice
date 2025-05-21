@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "hi ashok"
-echo ""
+echo "hi chetanti"
