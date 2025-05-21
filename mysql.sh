@@ -41,3 +41,19 @@ then
 else
     echo "python3 is already installed"
 fi    
+
+dnf list installed nginx
+if [ $? -ne 0 ]
+then 
+    echo "nginx is not installed.. going to install it"
+    dnf install nginx -y
+    if [ $? -ne 0 ]
+    then 
+        echo "installing nginx is SUCCESS"
+    else
+        echo "installing nginx is FAILURE"
+        exit 1
+    fi
+else 
+    echo "nginx is already installed"
+fi
