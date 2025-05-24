@@ -1,5 +1,5 @@
 #!/bin/bash
 
-START_TIME=&(date +%s)
+START_TIME=$(date +%s)
 
 echo "$START_TIME"
