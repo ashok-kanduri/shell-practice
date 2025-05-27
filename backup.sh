@@ -10,7 +10,7 @@ SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} #if days are provided then variable 3 will be considered other-wise by default 14days will be considered
 
-if [ USERID -eq 0 ]
+if [ $USERID -eq 0 ]
 then 
     echo "you are running with root access"
 else
