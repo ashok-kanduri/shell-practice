@@ -46,7 +46,7 @@ if [ ! -z "$FILES" ]   # if $FILES not empty, code gets executed
 then                 
     echo "Files to zip are: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
-    ZIP_FILE="$DEST_DIR/app-logs-$TIMPSTAMP.zip" #zip files name
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" #zip files name
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
     if [ -f $ZIP_FILE ]  # to check if the zipping is successful or not
     then
